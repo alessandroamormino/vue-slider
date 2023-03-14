@@ -59,7 +59,7 @@ createApp({
         let self = this;
         this.startInterval = setInterval(function() {
             self.nextImage();
-        }, 1000);
+        }, 3000);
     }, 
     stopAutoPlay(){
         clearInterval(this.startInterval);
