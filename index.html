@@ -44,7 +44,7 @@
                     <div class="thumb">
                         <img src="img/05.webp" alt="Avengers" />
                     </div> -->
-                    <div v-for="(thumbnail, index) in slides" :class="index == activeIndex ? 'active' : '' " class="thumb">
+                    <div v-for="(thumbnail, index) in slides" @click="changeImg(index)" :class="index == activeIndex ? 'active' : '' " class="thumb">
                         <img :src="thumbnail.image" alt="thumbnail" />
                     </div>
                 </div>
