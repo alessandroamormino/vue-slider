@@ -31,6 +31,7 @@ createApp({
             }
         ],
         activeIndex: 0,
+        startInterval : '',
     }
   }, 
   methods: {
@@ -52,7 +53,20 @@ createApp({
 
     changeImg(index){
         this.activeIndex = index;
+    }, 
+
+    autoPlay(){
+        let self = this;
+        this.startInterval = setInterval(function() {
+            self.nextImage();
+        }, 1000);
+    }, 
+    stopAutoPlay(){
+        clearInterval(this.startInterval);
     }
+  },
+  mounted(){
+    this.autoPlay();
   },
 }).mount('#app')
 
